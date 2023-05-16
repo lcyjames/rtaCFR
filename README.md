@@ -98,18 +98,9 @@ Result
 # [1] "TRUE"
 ```
 
-
-
-# Help #
-
-Details about the package can be found in the user manual:
-```
-?ICScure
-```
-
 # Contact #
-Wong Kin Yau, Alex <<kin-yau.wong@polyu.edu.hk>>
+Lee Chun Yin, James <<james-chun-yin.lee@polyu.edu.hk>>
 
 # Reference #
-Lam, K. F., Lee, C. Y., Wong, K. Y., & Bandyopadhyay, D. (2021). Marginal analysis of current status data with informative cluster size using a class of semiparametric transformation cure models. Statistics in Medicine [online], DOI:10.1002/sim.8910
+Qu, Y., Lee, C. Y., & Lam, K. F. (2022). A novel method to monitor COVID-19 fatality rate in real-time, a key metric to guide public health policy. Scientific Reports, 12(1), 18277. DOI:10.1038/s41598-022-23138-4
 
