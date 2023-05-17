@@ -1,7 +1,7 @@
 # rtaCFR #
 rtaCFR (which stands for <ins>**r**</ins>eal-<ins>**t**</ins>ime <ins>**a**</ins>djusted <ins>**C**</ins>ase <ins>**F**</ins>atality <ins>**R**</ins>ate) is a package that performs estimation of the real-time fatality rates with adjustment for reporting delay in deaths proposed by Qu et al. (2022) <DOI: [10.1038/s41598-022-23138-4](https://doi.org/10.1038/s41598-022-23138-4)>.
 
-**rtaCFR** relies on the R-packages `genlasso` and `Rtools`, which is hosted on CRAN.
+**rtaCFR** relies on the R-packages `genlasso` and `Rtools`, which are hosted on CRAN.
 
 # How to import the Functions #
 > install.packages("devtools")<br />
@@ -26,7 +26,7 @@ This function generates a data set according to the model in Qu et al. (2022) th
 >- `F_mean` is the mean of the gamma distribution for the time from disease onset to death
 >- `F_shape` is the shape parameter of the gamma distribution for the time from disease onset to death
 
-Taking scenario (b) in the simulation study in Qu et al. (2022) as an example:
+Take scenario (b) in the simulation study in Qu et al. (2022) as an example:
 ```
 data <- rtaCFR.SIM(ct = 3000-5*abs(100-c(1:200)), pt = 0.01*exp(0.012*c(1:200)), seed = 1)
 head(data)
@@ -54,7 +54,7 @@ This function computes the rtaCFR as proposed in Qu et al. (2022). The details o
 >- `dt` is the number of deaths
 >- `F_mean` is the mean of the gamma distribution for the time from disease onset to death
 >- `F_shape` is the shape parameter of the gamma distribution for the time from disease onset to death
->- `maxsteps` is an integer specifying the maximum number of steps for the fusedlasso to take before termination
+>- `maxsteps` is an integer specifying the maximum number of steps for the fused lasso to take before termination
 
 Example:
 ```
