@@ -68,7 +68,7 @@ tail(rt_fit$p_hat)
 
 ```
 plot(rt_fit$p_hat, type="b", pch=19, ylab="Fatality rates", xlab="Time", col="red", cex=0.6)
-lines(c(1:200),0.01*exp(0.012*c(1:200)), lwd=2)
+lines(c(1:200), 0.01*exp(0.012*c(1:200)), lwd=2)
 legend("topleft", legend=c("rtaCFR", "true"), col=c("red", "black"), lty=1:2, cex=0.8)
 ```
 <img src="https://github.com/lcyjames/rtaCFR/blob/main/illus.png" width="600"/>
