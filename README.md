@@ -44,7 +44,7 @@ This data structure is as follows:
 >- `ct` is the number of confirmed cases
 >- `dt` is the number of deaths with reporting delay from disease onset to death
 
-<ins>**JointCSsurvEST**</ins>
+<ins>**rtaCFR.EST**</ins>
 
 ```
 rtaCFR.EST(ct, dt, F_mean = 15.43, F_shape = 2.03, maxsteps = 10000)
