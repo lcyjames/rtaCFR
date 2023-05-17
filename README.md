@@ -1,23 +1,19 @@
 # rtaCFR #
 rtaCFR (which stands for <ins>**r**</ins>eal-<ins>**t**</ins>ime <ins>**a**</ins>djusted <ins>**C**</ins>ase <ins>**F**</ins>atality <ins>**R**</ins>ate) is a package that performs estimation of the real-time fatality rates with adjustment for reporting delay in deaths proposed by Qu et al. (2022) <DOI: [10.1038/s41598-022-23138-4](https://doi.org/10.1038/s41598-022-23138-4)>.
 
-**rtaCFR** relies on the R-packages `genlasso`, which is hosted on CRAN.
+**rtaCFR** relies on the R-packages `genlasso` and `Rtools`, which is hosted on CRAN.
 
-# Installation #
-**ICScure** can be installed from github directly:
-```
-install.packages("devtools")
-library(devtools)
-install_github("alexwky/ICScure")
-```
+# How to import the Functions #
+> install.packages("devtools")<br />
+> library(devtools) <br /> 
+> source_url("https://github.com/lcyjames/rtaCFR/blob/main/CoreFunctions.R?raw=TRUE")
 
 # Usage #
-The package contains 3 functions:
+The package contains 2 functions:
 |Functions  | Description|
 |------------- | -------------|
-BernsteinPolynomial  | Calculate the values of a Bernstein polynomial at given time points.
-ICDASim  | Generate a data set according to the simulation studies in Lam et al. (2021) <DOI: [10.1002/sim.891](https://doi.org/10.1002/sim.8910)>
-Est.ICScure  |  Perform the cluster-weighted GEE or GEE estimation of Lam et al. (2021) <DOI: [10.1002/sim.891](https://doi.org/10.1002/sim.8910)>
+rtaCFR.SIM  | Generate a data set according to the simulation study in Qu et al. (2022)
+rtaCFR.EST  | Computation of the rtaCFR as proposed in Qu et al. (2022)
 
 
 <ins>**BernsteinPolynomial**</ins>
