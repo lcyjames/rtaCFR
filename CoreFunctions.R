@@ -1,6 +1,6 @@
 library(genlasso)
 
-rtaCFR_SIM<-function(ct, pt, seed = NA, F_mean = 15.43, F_shape = 2.03){
+rtaCFR.SIM<-function(ct, pt, seed = NA, F_mean = 15.43, F_shape = 2.03){
   if(is.numeric(seed)){set.seed(seed)}
   if(length(ct)!=length(pt)){print("ERROR: The length of ct is not equal to that of pt.");break}
   N<-length(ct)
@@ -10,7 +10,7 @@ rtaCFR_SIM<-function(ct, pt, seed = NA, F_mean = 15.43, F_shape = 2.03){
   return(data.frame(ct=ct, dt=dt_d))
 }
 
-rtaCFR_EST<-function(ct, dt, F_mean = 15.43, F_shape = 2.03, maxsteps = 10000){
+rtaCFR.EST<-function(ct, dt, F_mean = 15.43, F_shape = 2.03, maxsteps = 10000){
   if(length(ct)!=length(dt)){print("ERROR: The length of ct is not equal to that of dt.");break}
   N<-length(ct)
   fs  <-diff(pgamma(q=c(0:N), shape = F_shape,rate = F_shape/F_mean))
@@ -28,8 +28,8 @@ rtaCFR_EST<-function(ct, dt, F_mean = 15.43, F_shape = 2.03, maxsteps = 10000){
   return(list(p_hat=p_hat, lambda_star=lam_star, steps=steps, p_matrix=a0$beta, sol_path=Sum_a0))
 }
 
-# data   <-rtaCFR_SIM(ct = 3000-5*abs(100-c(1:200)), pt = 0.01*exp(0.012*c(1:200)), seed = 1)
-# rt_fit <-rtaCFR_EST(ct = data$ct, dt = data$dt)
+# data   <-rtaCFR.SIM(ct = 3000-5*abs(100-c(1:200)), pt = 0.01*exp(0.012*c(1:200)), seed = 1)
+# rt_fit <-rtaCFR.EST(ct = data$ct, dt = data$dt)
 # plot(rt_fit$p_hat, type="b", pch=19, ylab="Fatality rates", xlab="time", col="red", cex=0.6)
 # lines(c(1:200),0.01*exp(0.012*c(1:200)), lwd=2)
 # legend("topleft", legend=c("rtaCFR", "true"), col=c("red", "black"), lty=1:2, cex=0.8)
