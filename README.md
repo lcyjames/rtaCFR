@@ -44,9 +44,34 @@ This data structure is as follows:
 >- `ct` is the number of confirmed cases
 >- `dt` is the number of deaths with reporting delay from disease onset to death
 
+<ins>**JointCSsurvEST**</ins>
 
+```
+rtaCFR.EST(ct, dt, F_mean = 15.43, F_shape = 2.03, maxsteps = 10000)
+```
+This function computes the rtaCFR as proposed in Qu et al. (2022). The details of the arguments are as follows:
+>- `ct` is the number of confirmed cases
+>- `dt` is the number of deaths
+>- `F_mean` is the mean of the gamma distribution for the time from disease onset to death
+>- `F_shape` is the shape parameter of the gamma distribution for the time from disease onset to death
+>- `maxsteps` is an integer specifying the maximum number of steps for the fusedlasso to take before termination
 
+Example:
+```
+Dataset <- rtaCFR.SIM(ct = 3000-5*abs(100-c(1:200)), pt = 0.01*exp(0.012*c(1:200)), seed = 1)
+rt_fit <- rtaCFR.EST(ct = Dataset$ct, dt = Dataset$dt)
+head(rt_fit$p_hat)
+# [1] 0.0088 0.0096 0.0107 0.0131 0.0087 0.0134
+tail(rt_fit$p_hat)
+# [1] 0.1030 0.1131 0.1018 0.1135 0.1102 0.1024
+```
 
+```
+plot(rt_fit$p_hat, type="b", pch=19, ylab="Fatality rates", xlab="Time", col="red", cex=0.6)
+lines(c(1:200),0.01*exp(0.012*c(1:200)), lwd=2)
+legend("topleft", legend=c("rtaCFR", "true"), col=c("red", "black"), lty=1:2, cex=0.8)
+```
+<img src="https://github.com/lcyjames/rtaCFR/blob/main/illus.png" width="600"/>
 
 # Contact #
 Lee Chun Yin, James <<james-chun-yin.lee@polyu.edu.hk>>
