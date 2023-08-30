@@ -28,8 +28,8 @@ This function generates a data set according to the model in Qu et al. (2022) th
 
 Take scenario (b) in the simulation study in Qu et al. (2022) as an example:
 ```
-Dataset <- rtaCFR.SIM(ct = 3000-5*abs(100-c(1:200)), pt = 0.01*exp(0.012*c(1:200)), seed = 1)
-head(Dataset)
+Data <- rtaCFR.SIM(ct = 3000-5*abs(100-c(1:200)), pt = 0.01*exp(0.012*c(1:200)), seed = 1)
+head(Data)
 
 #    ct        dt
 #1 2505 0.1596081
@@ -58,8 +58,9 @@ This function computes the rtaCFR as proposed in Qu et al. (2022). The details o
 
 Example:
 ```
-Dataset <- rtaCFR.SIM(ct = 3000-5*abs(100-c(1:200)), pt = 0.01*exp(0.012*c(1:200)), seed = 1)
-rt_fit <- rtaCFR.EST(ct = Dataset$ct, dt = Dataset$dt)
+Data <- rtaCFR.SIM(ct = 3000-5*abs(100-c(1:200)), pt = 0.01*exp(0.012*c(1:200)), seed = 1)
+rt_fit <- rtaCFR.EST(ct = Data$ct, dt = Data$dt)
+
 head(rt_fit$p_hat)
 # [1] 0.0088 0.0096 0.0107 0.0131 0.0087 0.0134
 tail(rt_fit$p_hat)
