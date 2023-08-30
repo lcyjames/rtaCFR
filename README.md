@@ -61,16 +61,17 @@ Example:
 Data <- rtaCFR.SIM(ct = 3000-5*abs(100-c(1:200)), pt = 0.01*exp(0.012*c(1:200)), seed = 1)
 rt_fit <- rtaCFR.EST(ct = Data$ct, dt = Data$dt)
 
-head(rt_fit$p_hat)
+round(head(rt_fit$p_hat),4)
 # [1] 0.0088 0.0096 0.0107 0.0131 0.0087 0.0134
-tail(rt_fit$p_hat)
+round(tail(rt_fit$p_hat),4)
 # [1] 0.1030 0.1131 0.1018 0.1135 0.1102 0.1024
 ```
 
 ```
-plot(rt_fit$p_hat, type="b", pch=19, ylab="Fatality rates", xlab="Time", col="red", cex=0.6)
-lines(c(1:200), 0.01*exp(0.012*c(1:200)), lwd=2)
-legend("topleft", legend=c("rtaCFR", "true"), col=c("red", "black"), lty=1:2, cex=0.8)
+plot(rt_fit$p_hat, type="b", pch = 19, ylab = "Fatality rates", xlab = "Time", col = "red", cex = 0.6)
+lines(c(1:200), 0.01*exp(0.012*c(1:200)), lwd = 2)
+legend("topleft", legend = c("rtaCFR", "true"), col = c("red", "black"), lty = c(1,1),lwd = c(1:2), pch = c(19,NA), cex = 0.8)
+
 ```
 <img src="https://github.com/lcyjames/rtaCFR/blob/main/illus.png" width="600"/>
 
