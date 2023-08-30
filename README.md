@@ -28,8 +28,8 @@ This function generates a data set according to the model in Qu et al. (2022) th
 
 Take scenario (b) in the simulation study in Qu et al. (2022) as an example:
 ```
-data <- rtaCFR.SIM(ct = 3000-5*abs(100-c(1:200)), pt = 0.01*exp(0.012*c(1:200)), seed = 1)
-head(data)
+Dataset <- rtaCFR.SIM(ct = 3000-5*abs(100-c(1:200)), pt = 0.01*exp(0.012*c(1:200)), seed = 1)
+head(Dataset)
 
 #    ct        dt
 #1 2505 0.1596081
