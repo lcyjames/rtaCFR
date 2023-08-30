@@ -73,7 +73,7 @@ lines(c(1:200), 0.01*exp(0.012*c(1:200)), lwd = 2)
 legend("topleft", legend = c("rtaCFR", "true"), col = c("red", "black"), lty = c(1,1),lwd = c(1:2), pch = c(19,NA), cex = 0.8)
 
 ```
-<img src="https://github.com/lcyjames/rtaCFR/blob/main/illus.png" width="600"/>
+<img src="https://github.com/lcyjames/rtaCFR/blob/main/example.png" width="600"/>
 
 # Contact #
 Lee Chun Yin, James <<james-chun-yin.lee@polyu.edu.hk>>
